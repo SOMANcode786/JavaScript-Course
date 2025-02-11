@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Rock paper scissor</h1>
+    <div style="margin: 24px; display: flex; gap: 24px">
+      <button
+        onclick="
+        const random=Math.random();
+         let computerChoice='';
+        if(random>0.34 && random<0.67){
+         computerChoice='rock';
+
+
+        }
+        else if(random>=0.67 && random<0.9){
+         computerChoice='paper';
+        
+        }
+        else{
+         computerChoice='scissor';
+        
+        }
+        
+        console.log(computerChoice);
+let result='';
+        if(computerChoice == 'rock'){
+            result='Tie';
+            
+        }
+        else if(computerChoice == 'paper'){
+            result='Computer wins';
+        }
+        else if(computerChoice =='scissor'){
+            result='You win';
+        }
+        else{
+            result='Invalid choice';
+        }
+    alert(`you picked a rock . computer pick ${computerChoice} . ${result}`);
+
+        
+        "
+      >
+        Rock
+      </button>
+      <button
+        onclick="
+        const random=Math.random();
+         let computerChoice='';
+        if(random>0.34 && random<0.67){
+         computerChoice='rock';
+
+
+        }
+        else if(random>=0.67 && random<0.9){
+         computerChoice='paper';
+        
+        }
+        else{
+         computerChoice='scissor';
+        
+        }
+        
+        console.log(computerChoice);
+let result='';
+        if(computerChoice == 'rock'){
+            result='Tie';
+            
+        }
+        else if(computerChoice == 'paper'){
+            result='Computer wins';
+        }
+        else if(computerChoice =='scissor'){
+            result='You win';
+        }
+        else{
+            result='Invalid choice';
+        }
+    alert(`you picked a Paper . computer pick ${computerChoice} . ${result}`);
+
+        
+        "
+      >
+        Paper
+      </button>
+      <button
+        onclick="
+        const random=Math.random();
+         let computerChoice='';
+        if(random>0.34 && random<0.67){
+         computerChoice='rock';
+
+
+        }
+        else if(random>=0.67 && random<0.9){
+         computerChoice='paper';
+        
+        }
+        else{
+         computerChoice='scissor';
+        
+        }
+        
+        console.log(computerChoice);
+let  result ='';
+        if(computerChoice == 'rock'){
+            result='Tie';
+            
+        }
+        else if(computerChoice == 'paper'){
+            result='Computer wins';
+        }
+        else if(computerChoice =='scissor'){
+            result='You win';
+        }
+        else{
+            result='Invalid choice';
+        }
+    alert(`you picked a scissor . computer pick ${computerChoice} . ${result}`);
+
+        
+        "
+      >
+        scissor
+      </button>
+    </div>
+  </body>
+</html>
