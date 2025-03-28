@@ -1,0 +1,35 @@
+body {
+    text-align: center;
+    background-color: #222;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+video {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+.controls {
+    margin-top: 10px;
+}
+
+button {
+    padding: 8px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+input[type="range"] {
+    width: 100px;
+    margin: 0 10px;
+}

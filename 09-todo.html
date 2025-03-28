@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <input placeholder="To do name" class="js-name-input">
+    <button class="js-add-btn" onclick="Add_list();">Add</button>
+    <div class="js-todo-list">
+        <!-- todo list will be added here -->
+    </div>
+
+    <script>
+        const todoList = [];
+
+        function render() {
+            let todoHTML = ''; // Initialize as an empty string to accumulate HTML
+
+            for (let i = 0; i < todoList.length; i++) { // Iterate over the array
+                const todo = todoList[i];
+                const html = `<p>${todo}</p>`; // Corrected the HTML tag
+                todoHTML += html; // Accumulate HTML
+            }
+
+            document.querySelector(".js-todo-list").innerHTML = todoHTML; // Render the accumulated HTML
+        }
+
+        function Add_list() {
+            const inputElement = document.querySelector('.js-name-input');
+            const name = inputElement.value; // Trim to remove unnecessary spaces
+
+            // if (name !== "") { // Avoid adding empty strings
+                todoList.push(name);
+                console.log(todoList);
+                render(); // Render the updated list
+                inputElement.value = ''; 
+            // }
+        }
+    </script>
+</body>
+</html>

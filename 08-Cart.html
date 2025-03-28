@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            width: 100%;
+        }
+        .form-container {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container p-4 shadow bg-white rounded">
+            <h2 class="mb-3 text-center">Enter Details</h2>
+            <form id="cartForm">
+                <div class="mb-3">
+                    <label class="form-label">Name:</label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Description:</label>
+                    <input type="text" id="description" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Image URL:</label>
+                    <input type="text" id="image" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-success w-100">Add to Cart</button>
+            </form>
+        </div>
+        <div class="card-container" id="cardContainer"></div>
+    </div>
+
+    <script>
+        document.getElementById("cartForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            let name = document.getElementById("name").value;
+            let description = document.getElementById("description").value;
+            let image = document.getElementById("image").value;
+            
+            let cardContainer = document.getElementById("cardContainer");
+            
+            let card = document.createElement("div");
+            card.classList.add("card");
+            card.style.width = "18rem";
+            card.innerHTML = `
+                <img src="${image}" class="card-img-top" alt="Product Image">
+                <div class="card-body">
+                    <h5 class="card-title">${name}</h5>
+                    <p class="card-text">${description}</p>
+                    <a href="https://www.topgear.com/sites/default/files/2024/05/1-AMG-GT-UK-review-2024.jpg" class="btn btn-primary">View Item</a>
+                </div>
+            `;
+            
+            cardContainer.appendChild(card);
+            document.getElementById("cartForm").reset();
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
